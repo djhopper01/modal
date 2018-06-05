@@ -1,0 +1,2 @@
+class ConsentsController < ApplicationController
+end
