@@ -11,12 +11,12 @@
           To comply with various laws, we had to make numerous updates to our privacy policy. Please read through them carefully and agree to our new terms. <strong>If you are unable to do so, you will be disallowed from using our application.</strong> At any time when you wish to continue using our services, please come back and accept our privacy policy.
         </p>
         <%= f.label :agree do %>
-          <%= f.check_box :agree %> I agree to the <%= link_to 'privacy policy', '#' %>
+          <%= f.check_box :agree %> I agree to the <%= link_to 'privacy policy', '#', class: 'text-orange no-underline hover:underline font-semibold' %>
         <% end %>
       </div>
-      <div class='px-6 py-4'>
-        <%= f.button 'Confirm', type: :submit %>
-        <%= f.button 'No, take me back' %>
+      <div class='px-6 py-4' style='background-color: hsl(208, 74%, 15%);'>
+        <%= f.button 'Confirm', type: :submit, class: 'px-6 py-4 bg-orange-dark rounded-lg text-white font-semibold disabled:bg-orange disabled:text-orange-lighter' %>
+        <%= f.button 'No, take me back', class: 'px-6 py-4 text-grey-darker font-semibold -ml-2' %>
       </div>
     <% end %>
   </div>
