@@ -1,5 +1,5 @@
-<div class='w-1/2 h-auto mx-auto'>
-  <h1>We've updated our privacy policy</h1>
+<div class='absolute pin-x w-1/2 h-auto mx-auto' style='margin-top: 8rem;'>
+  <h1 class='mb-4 mx-6 text-black'>We've updated our privacy policy</h1>
 
   <div class='rounded-lg bg-blue-darker shadow-lg overflow-hidden border-t-8 border-orange'>
     <%= form_with scope: :consent, url: consent_path do |f| %>
@@ -10,8 +10,8 @@
         <p class='mb-4'>
           To comply with various laws, we had to make numerous updates to our privacy policy. Please read through them carefully and agree to our new terms. <strong>If you are unable to do so, you will be disallowed from using our application.</strong> At any time when you wish to continue using our services, please come back and accept our privacy policy.
         </p>
-        <%= f.label :agree do %>
-          <%= f.check_box :agree %> I agree to the <%= link_to 'privacy policy', '#', class: 'text-orange no-underline hover:underline font-semibold' %>
+        <%= f.label :agree, class: 'cursor-pointer' do %>
+          <%= f.check_box :agree, class: 'mr-1' %> I agree to the <%= link_to 'privacy policy', '#', class: 'text-orange no-underline hover:underline font-semibold' %>
         <% end %>
       </div>
       <div class='px-6 py-4' style='background-color: hsl(208, 74%, 15%);'>
