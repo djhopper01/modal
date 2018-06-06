@@ -1,23 +1,40 @@
 <div class='absolute pin-x w-1/2 h-auto mx-auto animated' style='margin-top: 8rem;' data-controller='modal'>
   <h1 class='mb-4 mx-6 text-black'>We've updated our privacy policy</h1>
 
-  <div class='rounded-lg bg-blue-darker shadow-lg overflow-hidden border-t-8 border-orange'>
-    <%= form_with scope: :consent, url: consent_path do |f| %>
-      <div class='px-6 py-8 text-white leading-normal'>
-        <p class='mb-4'>
-          And we'd like you to review it.
-        </p>
-        <p class='mb-4'>
-          To comply with various laws, we had to make numerous updates to our privacy policy. Please read through them carefully and agree to our new terms. <strong>If you are unable to do so, you will be disallowed from using our application.</strong> At any time when you wish to continue using our services, please come back and accept our privacy policy.
-        </p>
-        <%= f.label :agree, class: 'cursor-pointer' do %>
-          <%= f.check_box :agree, class: 'mr-1' %> I agree to the <%= link_to 'privacy policy', '#', class: 'text-orange no-underline hover:underline font-semibold' %>
-        <% end %>
+  <div class='relative'>
+    <div class='rounded-lg bg-blue-darker shadow-lg overflow-hidden border-t-8 border-orange' data-target='modal.form'>
+      <%= form_with scope: :consent, url: consent_path do |f| %>
+        <div class='px-6 py-8 text-white leading-normal'>
+          <p class='mb-4'>
+            And we'd like you to review it.
+          </p>
+          <p class='mb-4'>
+            To comply with various laws, we had to make numerous updates to our privacy policy. Please read through them carefully and agree to our new terms. <strong>If you are unable to do so, you will be disallowed from using our application.</strong> At any time when you wish to continue using our services, please come back and accept our privacy policy.
+          </p>
+          <%= f.label :agree, class: 'cursor-pointer' do %>
+            <%= f.check_box :agree, class: 'mr-1' %> I agree to the <%= link_to 'privacy policy', '#', class: 'text-orange no-underline hover:underline font-semibold' %>
+          <% end %>
+        </div>
+        <div class='px-6 py-4' style='background-color: hsl(208, 74%, 15%);'>
+          <%= f.button 'Confirm', type: :submit, class: 'px-6 py-4 bg-orange-dark rounded-lg text-white font-semibold disabled:bg-orange disabled:text-orange-lighter', data: { action: 'modal#submit' } %>
+          <%= f.button 'No, take me back', class: 'px-6 py-4 text-grey-darker font-semibold -ml-2' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class='absolute w-full h-full pin-t rounded-lg text-center' style='display: none; background-color: rgba(0,0,0,0.3);' data-target='modal.activity'>
+      <div class='inline-block relative' style='top: 40%;'>
+        <div class="la-ball-spin-clockwise spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-      <div class='px-6 py-4' style='background-color: hsl(208, 74%, 15%);'>
-        <%= f.button 'Confirm', type: :submit, class: 'px-6 py-4 bg-orange-dark rounded-lg text-white font-semibold disabled:bg-orange disabled:text-orange-lighter', data: { action: 'modal#submit' } %>
-        <%= f.button 'No, take me back', class: 'px-6 py-4 text-grey-darker font-semibold -ml-2' %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>
