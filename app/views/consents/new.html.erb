@@ -15,7 +15,7 @@
         <% end %>
       </div>
       <div class='px-6 py-4' style='background-color: hsl(208, 74%, 15%);'>
-        <%= f.button 'Confirm', type: :submit, class: 'px-6 py-4 bg-orange-dark rounded-lg text-white font-semibold disabled:bg-orange disabled:text-orange-lighter' %>
+        <%= f.button 'Confirm', type: :submit, class: 'px-6 py-4 bg-orange-dark rounded-lg text-white font-semibold disabled:bg-orange disabled:text-orange-lighter', data: { action: 'modal#submit' } %>
         <%= f.button 'No, take me back', class: 'px-6 py-4 text-grey-darker font-semibold -ml-2' %>
       </div>
     <% end %>

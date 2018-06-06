@@ -5,4 +5,10 @@ export default class extends Controller {
   connect() {
     this.element.classList.add('bounceInDown')
   }
+
+  submit(evt) {
+    evt.preventDefault()
+
+    this.element.classList.add('bounceOutUp')
+  }
 }
